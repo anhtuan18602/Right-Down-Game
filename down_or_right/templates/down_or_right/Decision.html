@@ -1,0 +1,35 @@
+{% extends "global/Page.html" %}
+
+{% block content %}
+<h2>Make Your Decision</h2>
+
+<h4><strong>You are Player {{ player.level }}</strong></h4>
+
+<hr>
+
+<h3>Reminder of the choices:</h3>
+
+<p><strong>Option "Right":</strong></p>
+<ul>
+  <li>The game ends immediately.</li>
+  <li>You receive the <strong>large pile</strong> of money as a bonus <strong>({{large_pile}})</strong> .</li>
+  <li>All <strong>previous players</strong> receive the small pile <strong>({{small_pile}})</strong> .</li>
+  <li>All <strong>future players</strong> receive nothing.</li>
+</ul>
+
+<p><strong>Option "Down":</strong></p>
+<ul>
+  <li>There is a <strong>{{down_percent}}% chance</strong> the game continues and both piles double.</li>
+  <li>There is a <strong>{{end_percent}}% chance</strong> the game ends immediately. You and all previous players receive the doubled small pile <strong>({{doubled_small_pile}})</strong>.</li>
+</ul>
+
+<hr>
+
+<p><strong>Please choose one of the following options:</strong></p>
+
+<form method="post">
+    {{ formfields }}
+  <button type="submit">Submit</button>
+</form>
+
+{% endblock %}

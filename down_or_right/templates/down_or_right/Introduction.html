@@ -1,0 +1,40 @@
+{% extends "global/Page.html" %}
+{% load static %}
+
+{% block content %}
+<style>
+  .center-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .start-button {
+    padding: 12px 28px;
+    font-size: 1.1em;
+    margin-top: 30px;
+    cursor: pointer;
+  }
+</style>
+
+<div class="center-wrapper">
+  <h2>Welcome to the <em>Down or Right</em> Game Experiment!</h2>
+
+  <p style="max-width: 600px; font-size: 1.1em; line-height: 1.6;">
+    In this study, you will make decisions in a sequence-based game. Your choices, and those of other real participants, will determine the bonus payments.
+  </p>
+
+  <p style="max-width: 600px; font-size: 1.1em; line-height: 1.6;">
+    The next pages will explain the rules. You'll also answer a few questions to ensure understanding.
+  </p>
+
+  <form method="post">
+    <button type="submit" class="start-button">Start Instructions</button>
+  </form>
+</div>
+
+{% endblock %}

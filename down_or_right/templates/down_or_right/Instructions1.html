@@ -1,0 +1,38 @@
+{% extends "global/Page.html" %}
+{% load static %}
+
+{% block content %}
+
+<div style="display: flex; align-items: flex-start; gap: 20px;">
+
+  <!-- Text column -->
+  
+  <div style="flex: 1; min-width: 500px;">
+    <h1>Experiment Instructions</h1>
+    <br>
+    <p>In this experiment you will make decisions in a game in which you will be matched with other participants.</p>
+
+    <p>Your earnings (bonus payments) depend partly on your decisions, partly on the decisions of other participants, and partly on chance.</p>
+
+    <h2>The Game</h2>
+
+    <p>Players in this game take decisions one after another in a sequence and are numbered according to their position in the sequence: Player 1, Player 2, Player 3, and so on.</p>
+
+    <p>On your turn, you will choose between two actions: <strong>right</strong> or <strong>down</strong>.</p>
+  </div>
+
+  <!-- Image column -->
+  <div style="flex: 1; min-width: 200px;">
+    <img src="{% static 'images/down_right_struct.png' %}" alt="Game illustration" style="max-width: 100%; height: auto; border: 1px solid #ccc; border-radius: 4px;">
+  </div>
+
+</div>
+
+<hr>
+
+<h4>Instructions Comprehension Quiz:</h4>
+<form method="post">
+    {{ formfields }}
+  <button type="submit">Submit</button>
+</form>
+{% endblock %}
