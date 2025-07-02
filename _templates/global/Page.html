@@ -1,8 +1,21 @@
 {% extends "otree/Page.html" %}
 {% load otree static %}
 
-{% block global_styles  %}
+{% block global_styles %}
+  <style>
+    @media (max-width: 600px) {
+      .instructions-container {
+        flex-direction: column;
+      }
+      .instructions-text {
+        border-right: none;
+        border-bottom: 2px solid #ccc;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
 {% endblock %}
 
-{% block global_scripts  %}
+{% block global_scripts %}
 {% endblock %}

@@ -2,10 +2,11 @@
 {% load static %}
 
 {% block content %}
+
 <h2>Game Procedure</h2>
 <br>
-<div>
 
+<div>
   <p>Your own position in the sequence — whether you are Player 1, Player 2, Player 3, and so on — is pre-determined and will be communicated to you before the game starts.</p>
 
   <p>Your decisions have real consequences and will directly affect your earnings (bonus payments) and those of other participants. You will be matched with real participants from Prolific who are playing the same game in different positions in the sequence.</p>
@@ -18,12 +19,24 @@
 
   <p>From your position, you can observe the decisions made by earlier players. Your final earnings will be based on their decisions and your own. Likewise, your decision may influence earnings for earlier players and — if you choose <em>"down"</em> and the computer selects ≤ 90 — also for players who come after you.</p>
 </div>
+
 <hr>
-<!-- Side-by-side example layout -->
-<div style="display: flex; gap: 30px; margin-top: 30px; flex-wrap: wrap;">
-  
+
+<!-- Responsive side-by-side examples -->
+<div style="
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 30px;
+">
   <!-- Example 1 -->
-  <div style="flex: 1; min-width: 300px;">
+  <div style="
+    flex: 1 1 300px;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  ">
     <h3>Example 1</h3>
     <ul>
       <li>You are <strong>Player 2</strong> and it is your turn.</li>
@@ -37,14 +50,23 @@
         </ul>
       </li>
     </ul>
-    <div style="margin-top: 15px;">
-      <img src="{% static 'images/example1.png' %}" alt="Example 1 diagram" style="max-width: 100%; border: 1px solid #ccc; padding: 5px;">
-      <p style="font-size: 0.9em; color: #666;">Figure: Player 2 decision point in the sequence</p>
+    <div style="margin-top: 10px;">
+      <img src="{% static 'images/example1.png' %}" alt="Example 1 diagram"
+           style="width: 100%; max-width: 100%; border: 1px solid #ccc; padding: 4px; border-radius: 4px;">
+      <p style="font-size: 0.85em; color: #666;">
+        Figure: Player 2 decision point in the sequence
+      </p>
     </div>
   </div>
 
   <!-- Example 2 -->
-  <div style="flex: 1; min-width: 300px;">
+  <div style="
+    flex: 1 1 300px;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  ">
     <h3>Example 2</h3>
     <ul>
       <li>You are <strong>Player 3</strong> and it is your turn.</li>
@@ -58,18 +80,21 @@
         </ul>
       </li>
     </ul>
-    <div style="margin-top: 15px;">
-      <img src="{% static 'images/example2.png' %}" alt="Example 2 diagram" style="max-width: 100%; border: 1px solid #ccc; padding: 5px;">
-      <p style="font-size: 0.9em; color: #666;">Figure: Player 3 decision point in the sequence</p>
+    <div style="margin-top: 10px;">
+      <img src="{% static 'images/example2.png' %}" alt="Example 2 diagram"
+           style="width: 100%; max-width: 100%; border: 1px solid #ccc; padding: 4px; border-radius: 4px;">
+      <p style="font-size: 0.85em; color: #666;">
+        Figure: Player 3 decision point in the sequence
+      </p>
     </div>
   </div>
-
 </div>
+
 <hr>
-<h4>Instructions Comprehension Quiz:</h4>
-<form method="post">
-    {{ formfields }}
-  <button type="submit">Submit</button>
-</form>
+
+<h4>Instructions Comprehension Quiz</h4>
+
+{{ formfields }}
+{{ next_button }}
 
 {% endblock %}

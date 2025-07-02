@@ -3,14 +3,16 @@
 
 {% block content %}
 
-
-<div style="display: flex; gap: 40px; align-items: flex-start;">
-
-  <!-- Text column -->
-  <div style="flex: 1; min-width: 300px; padding-right: 20px; border-right: 2px solid #ccc">
+<div class="instructions-container" style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start;">
+  
+  <!-- text column -->
+  <div class="instructions-text" style="flex: 1 1 300px; padding-right: 20px; border-right: 2px solid #ccc;">
     <h2>Earnings in the Game</h2>
     <br>
-    <p>At any given position in the sequence, there are two piles of money: a <strong>large pile</strong> and a <strong>small pile</strong>. The further along the game progresses, the larger both piles become. At the beginning of the game:</p>
+    <p>
+      At any given position in the sequence, there are two piles of money: a
+      <strong>large pile</strong> and a <strong>small pile</strong>. The further along the game progresses, the larger both piles become. At the beginning of the game:
+    </p>
     <ul>
       <li>Large pile = 4 points</li>
       <li>Small pile = 1 point</li>
@@ -26,8 +28,8 @@
     <h4>Choosing <em>"down"</em>:</h4>
     <ul>
       <li>The computer randomly selects a number from 1 to 100.</li>
-      <li>If ≤ {{down_percent}} ({{down_percent}}% chance): the game continues.</li>
-      <li>If > {{down_percent}} ({{end_percent}}% chance): the game ends.</li>
+      <li>If ≤ {{ down_percent }} ({{ down_percent }}% chance): the game continues.</li>
+      <li>If > {{ down_percent }} ({{ end_percent }}% chance): the game ends.</li>
       <li>In either case:
         <ul>
           <li>The small pile <strong>doubles</strong>.</li>
@@ -37,20 +39,21 @@
         </ul>
       </li>
     </ul>
-    <p><strong>Summary:</strong> Choosing <em>"down"</em> gives a {{down_percent}}% chance the game continues (both piles double), and a {{end_percent}}% chance the game ends with just the small pile doubled.</p>
-
+    <p>
+      <strong>Summary:</strong> Choosing <em>"down"</em> gives a {{ down_percent }}% chance the game continues (both piles double), and a {{ end_percent }}% chance the game ends with just the small pile doubled.
+    </p>
   </div>
-
-  <!-- Examples column -->
-  <div style="flex: 1; min-width: 300px;">
-    <!-- Image -->
+  
+  <!-- examples column -->
+  <div class="instructions-examples" style="flex: 1 1 300px;">
     <div style="margin-top: 20px;">
-      <img src="{% static 'images/choices_payoff.png' %}" alt="Payout example diagram" style="max-width: 100%; height: auto; border: 1px solid #ccc; padding: 4px;">
-      <p style="font-size: 0.9em; color: #555;">Figure: Payout of different choices.</p>
+      <img src="{% static 'images/choices_payoff.png' %}" alt="Payout example diagram"
+           style="max-width: 100%; height: auto; border: 1px solid #ccc; padding: 4px;">
+      <p style="font-size: 0.9em; color: #555;">
+        Figure: Payout of different choices.
+      </p>
     </div>
-
     <h4>Examples</h4>
-
     <ul>
       <li><strong>Player 1 chooses "right":</strong>
         <ul>
@@ -58,14 +61,12 @@
           <li>All others: 0 points</li>
         </ul>
       </li>
-
-      <li><strong>Player 1 chooses "down" → game ends ({{end_percent}}%):</strong>
+      <li><strong>Player 1 chooses "down" → game ends ({{ end_percent }}%):</strong>
         <ul>
           <li>Player 1: 2 points (doubled small pile)</li>
           <li>Others: 0 points</li>
         </ul>
       </li>
-
       <li><strong>Player 1 chooses "down" → game continues → Player 2 chooses "right":</strong>
         <ul>
           <li>Player 2: 8 points (doubled large pile)</li>
@@ -73,7 +74,6 @@
           <li>Others: 0 points</li>
         </ul>
       </li>
-
       <li><strong>Player 2 chooses "down" → game continues → Player 3 chooses "right":</strong>
         <ul>
           <li>Player 3: 16 points (large pile doubled twice)</li>
@@ -82,14 +82,10 @@
         </ul>
       </li>
     </ul>
-    
   </div>
-
 </div>
 <hr>
 <h4>Instructions Comprehension Quiz:</h4>
-<form method="post">
-    {{ formfields }}
-  <button type="submit">Submit</button>
-</form>
+{{ formfields }}
+{{ next_button }}
 {% endblock %}

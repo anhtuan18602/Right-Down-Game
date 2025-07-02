@@ -4,9 +4,9 @@ class C(BaseConstants):
     NAME_IN_URL = 'down_or_right'
     PLAYERS_PER_GROUP = None 
     NUM_ROUNDS = 1
-    DOWN_PERCENT = 90
-    LARGE_PILE = cu(4)
-    SMALL_PILE = cu(1)
+    DOWN_PERCENT = 90 # Percentage of choosing down will result in game continuing
+    LARGE_PILE = cu(4) # Base value of large pile
+    SMALL_PILE = cu(1) # Base value of small pile
 
 class Subsession(BaseSubsession):
     pass
